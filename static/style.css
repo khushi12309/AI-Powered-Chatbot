@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Card */
+.chat-container {
+    width: 95%;
+    max-width: 1100px;
+    height: 90vh;
+    background: #1e293b;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* Header */
+.chat-header {
+    padding: 18px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+/* Chat Area */
+.chat-box {
+    flex: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+    background: #0f172a;
+}
+
+/* Message Common */
+.chat-box p {
+    max-width: 70%;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    animation: fadeSlide 0.25s ease;
+    clear: both;
+}
+
+/* USER → RIGHT */
+.user {
+    background: linear-gradient(135deg, #38bdf8, #22d3ee);
+    color: #020617;
+    margin-left: auto;
+    margin-right: 0;
+    border-bottom-right-radius: 4px;
+    text-align: left;
+}
+
+/* BOT → LEFT */
+.bot {
+    background: #e5e7eb;
+    color: #020617;
+    margin-right: auto;
+    margin-left: 0;
+    border-bottom-left-radius: 4px;
+    text-align: left;
+}
+
+
+/* Input Section */
+.chat-input {
+    display: flex;
+    padding: 14px;
+    background: #020617;
+}
+
+/* Input */
+.chat-input input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Button */
+.chat-input button {
+    margin-left: 12px;
+    padding: 0 28px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.chat-input button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(139,92,246,0.7);
+}
+
+/* Scrollbar */
+.chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 10px;
+}
+
+/* Animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

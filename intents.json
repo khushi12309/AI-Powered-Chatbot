@@ -1,0 +1,30 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey"],
+      "responses": ["Hello!", "Hi there!", "How can I help you?"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye"],
+      "responses": ["Bye!", "See you later!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you"],
+      "responses": ["You're welcome!", "No problem!"]
+    },
+    {
+  "tag": "fallback",
+  "patterns": ["asdfgh", "random","unknown question" ],
+  "responses": ["Sorry, I didn’t understand that. Can you please rephrase?", "I’m still learning. Try asking something related to studies, AI, or programming." ]
+    },
+    {
+  "tag": "health",
+  "patterns": ["health tips", "how to stay healthy","fitness tips" ],
+  "responses": ["Drink enough water, exercise regularly, and get proper sleep.", "Maintain a balanced diet and manage stress for good health." ]
+}
+
+  ]
+}

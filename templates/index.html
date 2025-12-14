@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">AI Chatbot</div>
+
+  <div id="chat" class="chat-box"></div>
+
+  <div class="chat-input">
+    <input id="msg" placeholder="Type your message...">
+    <button onclick="send()">Send</button>
+  </div>
+</div>
+
+<script>
+function send() {
+  let msg = document.getElementById("msg").value;
+  if(msg.trim() === "") return;
+
+  document.getElementById("chat").innerHTML +=
+    "<p class='user'>" + msg + "</p>";
+
+  fetch("/get", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({message: msg})
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("chat").innerHTML +=
+      "<p class='bot'> " + data.reply + "</p>";
+    document.getElementById("msg").value = "";
+    document.getElementById("chat").scrollTop =
+      document.getElementById("chat").scrollHeight;
+  });
+}
+</script>
+
+
+</body>
+</html>
